@@ -1,0 +1,8 @@
+name: CKEditor Form Elements
+type: module
+description: CKEditor Form Elements plugin module for Drupal 9
+package: CKEditor
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:ckeditor
+  - drupal:editor
