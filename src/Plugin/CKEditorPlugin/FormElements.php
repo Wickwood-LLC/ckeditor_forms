@@ -22,7 +22,7 @@ class FormElements extends CKEditorPluginBase
      */
     public function getFile()
     {
-        return drupal_get_path('module', 'ckedior_forms') . '/js/forms.js';
+        return drupal_get_path('module', 'ckeditor_forms') . '/js/forms.js';
     }
 
     /**
