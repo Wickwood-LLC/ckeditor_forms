@@ -22,7 +22,7 @@ class FormElements extends CKEditorPluginBase
      */
     public function getFile()
     {
-        return drupal_get_path('module', 'ckeditor_forms') . '/js/forms.js';
+        return $this->getLibraryPath() . '/plugin.js';
     }
 
     /**
@@ -54,6 +54,41 @@ class FormElements extends CKEditorPluginBase
     {
         return [];
     }
+
+    /**
+     * Get the CKEditor Form Elements library path.
+     */
+    protected function getLibraryPath()
+    {
+        // Following the logic in Drupal 8.9.x and Drupal 9.x
+        // ----------------------------------------------------------------------
+        // Issue #3096648: Add support for third party libraries in site specific
+        // and install profile specific libraries folders
+        // https://www.drupal.org/project/drupal/issues/3096648
+        //
+        // https://git.drupalcode.org/project/drupal/commit/1edf15f
+        // -----------------------------------------------------------------------
+        // Search sites/<domain>/*.
+        $directories[] = \Drupal::service('site.path') . "/libraries/";
+
+        // Always search the root 'libraries' directory.
+        $directories[] = 'libraries/';
+
+        // Installation profiles can place libraries into a 'libraries' directory.
+        if ($installProfile = \Drupal::installProfile()) {
+            $profile_path = drupal_get_path('profile', $installProfile);
+            $directories[] = "$profile_path/libraries/";
+        }
+
+        foreach ($directories as $dir) {
+            if (file_exists(DRUPAL_ROOT . '/' . $dir . 'forms/plugin.js')) {
+                return $dir . 'forms';
+            }
+        }
+
+        return 'libraries/forms';
+    }
+
 
     /**
      * Get the CKEditor Form Elements library URL.
