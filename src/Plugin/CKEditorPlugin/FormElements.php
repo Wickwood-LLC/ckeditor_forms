@@ -48,6 +48,14 @@ class FormElements extends CKEditorPluginBase
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function getConfig(Editor $editor)
+    {
+        return [];
+    }
+
+    /**
      * Get the CKEditor Form Elements library URL.
      */
     protected function getLibraryUrl()
