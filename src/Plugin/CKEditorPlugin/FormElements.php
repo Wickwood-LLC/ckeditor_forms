@@ -63,11 +63,11 @@ class FormElements extends CKEditorPluginBase
 
         $originUrl = \Drupal::request()->getSchemeAndHttpHost() . \Drupal::request()->getBaseUrl();
 
-        $librarayPath = DRUPAL_ROOT . '/libraries/forms';
-        $librarayUrl = $originUrl . '/libraries/forms';
+        $libraryPath = DRUPAL_ROOT . '/libraries/forms';
+        $libraryUrl = $originUrl . '/libraries/forms';
 
         // Is the library found in the root libraries path.
-        $libraryFound = file_exists($librarayPath . '/plugin.js');
+        $libraryFound = file_exists($libraryPath . '/plugin.js');
 
         // If library is not found, then look in the current profile libraries path.
         if (!$libraryFound) {
@@ -78,13 +78,13 @@ class FormElements extends CKEditorPluginBase
                 // Is the library found in the current profile libraries path.
                 if (file_exists(DRUPAL_ROOT . '/' . $profilePath . '/plugin.js')) {
                     $libraryFound = TRUE;
-                    $librarayUrl = $originUrl . '/' . $profilePath;
+                    $libraryUrl = $originUrl . '/' . $profilePath;
                 }
             }
         }
 
         if ($libraryFound) {
-            return $librarayUrl;
+            return $libraryUrl;
         } else {
             return $originUrl . '/libraries/forms';
         }
