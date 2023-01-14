@@ -54,8 +54,8 @@ class FormElements extends CKEditorPluginBase
     public function getButtons()
     {
         $library_paths = [
-            'libraries/forms',
-            'libraries/ckeditor/plugins/forms',
+            'libraries/forms/icons',
+            'libraries/ckeditor/plugins/forms/icons',
         ];
 
         $library = FALSE;
@@ -67,10 +67,54 @@ class FormElements extends CKEditorPluginBase
         }
 
         return [
-            'Form Elements' => array(
-                'label' => $this->t('Form Elements'),
-                'image' => $library . '/icons/form.png',
-            ),
+            'Button' => [
+                'label' => $this->t('Button'),
+                'image' => $library . '/button.png',
+            ],
+            'Checkbox' => [
+                'label' => $this->t('Checkbox'),
+                'image' => $library . '/checkbox.png',
+            ],
+            'Form' => [
+                'label' => $this->t('Form'),
+                'image' => $library . '/form.png',
+            ],
+            'Hidden Field' => [
+                'label' => $this->t('Hidden Field'),
+                'image' => $library . '/hiddenfield.png',
+            ],
+            'Image Button' => [
+                'label' => $this->t('Image Button'),
+                'image' => $library . '/imagebutton.png',
+            ],
+            'Radio Button' => [
+                'label' => $this->t('Radio Button'),
+                'image' => $library . '/radio.png',
+            ],
+            'Selection Field' => [
+                'label' => $this->t('Selection Field'),
+                'image' => $library . '/select.png',
+            ],
+            'Selection Field RTL' => [
+                'label' => $this->t('Selection Field RTL'),
+                'image' => $library . '/select-rtl.png',
+            ],
+            'Textarea' => [
+                'label' => $this->t('Textarea'),
+                'image' => $library . '/textarea.png',
+            ],
+            'Textarea RTL' => [
+                'label' => $this->t('Textarea RTL'),
+                'image' => $library . '/textarea-rtl.png',
+            ],
+            'Text Field' => [
+                'label' => $this->t('Text Field'),
+                'image' => $library . '/textfield.png',
+            ],
+            'Text Field RTL' => [
+                'label' => $this->t('Text Field RTL'),
+                'image' => $library . '/textfield-rtl.png',
+            ]
         ];
     }
 
