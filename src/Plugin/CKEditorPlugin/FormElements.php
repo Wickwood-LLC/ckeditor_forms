@@ -63,13 +63,6 @@ class FormElements extends CKEditorPluginBase
             ),
         ];
     }
-    /**
-     * {@inheritdoc}
-     */
-    public function isEnabled(Editor $editor)
-    {
-        return TRUE;
-    }
 
     /**
      * {@inheritdoc}
