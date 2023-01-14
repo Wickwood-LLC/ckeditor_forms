@@ -50,7 +50,7 @@ class FormElements extends CKEditorPluginBase
 
         $library = FALSE;
         foreach ($library_paths as $library_path) {
-            if ($library_path) {
+            if (file_exists(DRUPAL_ROOT . '/' . $library_path)) {
                 $library = $library_path;
                 break;
             }
