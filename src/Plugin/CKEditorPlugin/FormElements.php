@@ -9,7 +9,7 @@ use Drupal\editor\Entity\Editor;
  * Defines the "forms" plugin.
  *
  * @CKEditorPlugin(
- *   id = "ckeditor_forms",
+ *   id = "forms",
  *   label = @Translation("CKEditor Form Elements"),
  *   module = "ckeditor_forms"
  * )
