@@ -41,6 +41,16 @@ class FormElements extends CKEditorPluginBase
     /**
      * {@inheritdoc}
      */
+    public function getDependencies(Editor $editor)
+    {
+        return [
+            'fakeobjects',
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getButtons()
     {
         $library_paths = [
